@@ -1,0 +1,25 @@
+{% extends 'home_admin.html' %}
+{% block main %}
+{% load static %}
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>ข้อมูลส่วนตัว</h2>
+                    </div><br>
+                    <img class="rounded-pill mx-auto" width="100" src="{{ user.socialaccount_set.all.0.get_avatar_url }}">
+                    <h5></h5> <br>
+                        <div class="modal-body">
+                                <div class="col-md-3 mx-auto" for="name">
+                                    <input  class="form-control text-muted"
+                                        placeholder="{{ user.first_name }}&nbsp{{ user.last_name }}" disabled>
+                                </div> <br>
+                                <div class="col-md-3 mx-auto" for="e-mail">
+                                    <input  class="form-control text-muted"
+                                        placeholder="{{ user.email }}" disabled>
+                                </div> <br>
+                        </div>
+                </div>
+            </div>
+{% endblock %}    
