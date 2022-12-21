@@ -1,0 +1,179 @@
+{% extends 'home_admin.html' %}
+{% block main %}
+{% load static %}
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>จัดการผู้ใช้</h2>
+                        <input class="search" type="text" id="myInput" onkeyup="myFunction()" placeholder="ค้นหา" title="Type in a name">
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>ลำดับ</td>
+                                <td>รหัสนักศึกษา</td>
+                                <td>ชื่อ</td>
+                                <td>สถานะ</td>
+                                <td>สมาชิกตั้งแต่</td>
+                                <td>สิทธิ์การจอง</td>
+                                <td>ตัวเลือก</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>63114540034</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>สมาชิก</td>
+                                <td>16/09/2022</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editroom">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deleteroom">ลบ</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>63114540034</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>สมาชิก</td>
+                                <td>16/09/2022</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editroom">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deleteroom">ลบ</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>63114540034</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>สมาชิก</td>
+                                <td>16/09/2022</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editroom">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deleteroom">ลบ</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>63114540034</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>สมาชิก</td>
+                                <td>16/09/2022</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editroom">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deleteroom">ลบ</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>63114540034</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>สมาชิก</td>
+                                <td>16/09/2022</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editroom">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deleteroom">ลบ</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+    <!-- แก้ไขข้อมูลส่วนตัวข้อมูลส่วนตัว -->
+        <div class="modal fade" id="editroom" tabindex="-1" aria-labelledby="editroomModal"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editroomModal">แก้ไขข้อมูลส่วนตัว</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="col" for="id_name">
+                            <input type="text" class="form-control " id="id_name" name="id_name" placeholder="รหัสนักศึกษา">
+                        </div> <br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger " data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-success ">ยืนยัน</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+
+
+    <!-- ยืนยันการลบ -->
+        <div class="modal fade" id="deleteroom" tabindex="-1" aria-labelledby="deleteroomModal"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+        <div class="modal-content">
+            <form action="" >
+                <div class="modal-header">
+                <h5 class="modal-title" id="deleteroomModal">ยืนยันการลบ </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="col" for="email_user">
+                            <input type="email" class="form-control " id="email_user" name="email_user" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger " data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-success ">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+
+
+{% endblock %}    

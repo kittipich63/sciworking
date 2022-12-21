@@ -1,0 +1,175 @@
+{% extends 'home_user.html' %}
+{% block main %}
+{% load static %}
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>การจองของฉัน</h2>
+                        <input class="search" type="text" id="myInput" onkeyup="myFunction()" placeholder="ค้นหา" title="Type in a name">
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>ลำดับ</td>
+                                <td>ชื่อ</td>
+                                <td>ห้อง</td>
+                                <td>วันที่จอง</td>
+                                <td>เวลาที่จอง</td>
+                                <td>สถานะ</td>
+                                <td>เหตุผลการอนุมัติ</td>
+                                <td>ตัวเลือก</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>1</td>
+                                <td>16/09/2022</td>
+                                <td>09:00น. - 11:00น.</td>
+                                <td><span class="status approved">อนุมัติ</span></td>
+                                <td>-</td>
+                                <td>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>2</td>
+                                <td>17/09/2022</td>
+                                <td>09:00น. - 11:00น.</td>
+                                <td><span class="status unapproved">ไม่อนุมัติ</span></td>
+                                <td>-</td>
+                                <td>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>กิตติพิชญ์ ภักดีกสิกร</td>
+                                <td>3</td>
+                                <td>17/09/2022</td>
+                                <td>09:00น. - 11:00น.</td>
+                                <td><span class="status wait">รออนุมัติ</span></td>
+                                <td>-</td>
+                                <td>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#editbooking">แก้ไข</button>
+                                    <button class="button" data-bs-toggle="modal" data-bs-target="#deletebooking">ลบ</button>
+                                </td>
+                            </tr>
+
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    
+
+        <!-- แก้ไขการจอง-->
+        <div class="modal fade" id="editbooking" tabindex="-1" aria-labelledby="editroomModal"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content">
+            <form action="" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editroomModal">แก้ไขการจอง</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="col" for="id_room">
+                            <div class="input-group-prepend">
+                                <label>เลือกห้อง</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option value="room 1">ห้อง 1</option>
+                                <option value="room 2">ห้อง 2</option>
+                                <option value="room 3">ห้อง 3</option>
+                            </select>
+                        </div> <br>
+                        <div class="col" for="date">
+                            <label>วันที่จอง</label>
+                            <input type="date" class="form-control " id="date" name="date" placeholder="16/09/2022">
+                        </div> <br>
+                        <div class="col" for="time">
+                            <label>เวลาเริ่มต้น</label>
+                            <input type="time" class="form-control " id="time" name="time" placeholder="09:00น.">
+                        </div> <br>
+                        <div class="col" for="time2">
+                            <label>เวลาสิ้นสุด</label>
+                            <input type="time" class="form-control " id="time2" name="time2" placeholder="11:00น.">
+                        </div> <br>
+                        <div class="col" for="member">
+                            <label>สมาชิก</label>
+                            <input type="text" class="form-control " id="member" name="member" placeholder="63114540034"> <br>
+                            <input type="text" class="form-control " id="member" name="member" placeholder="รหัสนักศึกษา"> <br>
+                            <button type="submit" class="btn btn-success ">เพิ่ม</button>
+                        </div> <br>
+                        <div class="col" for="reason">
+                            <label>เหตุผลการจอง</label>
+                            <input type="text" class="form-control " id="reason" name="reason" placeholder="ติวสอบ">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger " data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-success ">ยืนยัน</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+
+        <!-- ลบการจอง-->
+        <div class="modal fade" id="deletebooking" tabindex="-1" aria-labelledby="editroomModal"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content">
+            <form action="" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editroomModal">ลบการจอง</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="col" for="id_room">
+                            <label>ชื่อห้อง</label>
+                            <input type="text" class="form-control " id="id_room" name="id_room" placeholder="ห้อง 1">
+                        </div> <br>
+                        <div class="col" for="date">
+                            <label>วันที่จอง</label>
+                            <input type="text" class="form-control " id="date" name="date" placeholder="16/09/2022">
+                        </div> <br>
+                        <div class="col" for="time">
+                            <label>เวลาเริ่มต้น</label>
+                            <input type="text" class="form-control " id="time" name="time" placeholder="09:00น.">
+                        </div> <br>
+                        <div class="col" for="time2">
+                            <label>เวลาสิ้นสุด</label>
+                            <input type="text" class="form-control " id="time2" name="time2" placeholder="11:00น.">
+                        </div> <br>
+                        <div class="col" for="reason">
+                            <label>เหตุผลการจอง</label>
+                            <input type="text" class="form-control " id="reason" name="reason" placeholder="ติวสอบ">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger " data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-success ">ยืนยัน</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}
